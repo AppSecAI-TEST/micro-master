@@ -63,15 +63,13 @@ public class OCRWrapper {
 
     public String ocr(File imageFile) throws Exception {
         Tesseract tess = new Tesseract();
-        if (!System.getProperty("os.name").toLowerCase().startsWith("win")) {
-            if (TesseractHelper.isAWS) {
-                tess.setDatapath("/tmp/");
-            } else if (!"".equals(TesseractHelper.libPath)) {
-                tess.setDatapath(TesseractHelper.libPath + "/");
-            }
-            tess.setLanguage("pol");
-            tess.setOcrEngineMode(ITessAPI.TessOcrEngineMode.OEM_TESSERACT_ONLY);
+        if (TesseractHelper.isAWS) {
+            tess.setDatapath("/tmp/");
+        } else if (!"".equals(TesseractHelper.libPath)) {
+            tess.setDatapath(TesseractHelper.libPath + "/");
         }
+        tess.setLanguage("pol");
+        tess.setOcrEngineMode(ITessAPI.TessOcrEngineMode.OEM_TESSERACT_ONLY);
         String res = tess.doOCR(imageFile);
         return res;
     }
