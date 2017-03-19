@@ -26,15 +26,6 @@ import static org.nzdis.micro.bootloader.MicroBootProperties.bootProperties;
 public class ConvertPngToPDFIntent extends ServiceIntent {
     private static final String TMP_PDF_FILENAME = "tmpPdf_%s.pdf";
 
-    private String worker;
-
-    public String data;
-
-    private String result;
-
-    private Long startTime;
-    private Long endTime;
-
     public ConvertPngToPDFIntent() {
     }
 
@@ -75,45 +66,5 @@ public class ConvertPngToPDFIntent extends ServiceIntent {
         document.add(image);
         document.close();
         return CipherDataHelper.encryptByteArray(Files.toByteArray(new File(tmpFile)));
-    }
-
-    public String getWorker() {
-        return worker;
-    }
-
-    public void setWorker(String worker) {
-        this.worker = worker;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
-
-    public Long getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Long startTime) {
-        this.startTime = startTime;
-    }
-
-    public Long getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Long endTime) {
-        this.endTime = endTime;
     }
 }
