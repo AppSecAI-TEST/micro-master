@@ -11,6 +11,8 @@ public abstract class ServiceIntent implements Intent {
     protected String worker;
     protected Long startTime;
     protected Long endTime;
+    protected long startBattery;
+    protected long endBattery;
     protected String result;
 
     public Long getStartTime() {
@@ -51,6 +53,22 @@ public abstract class ServiceIntent implements Intent {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public long getStartBattery() {
+        return startBattery;
+    }
+
+    public void setStartBattery(long startBattery) {
+        this.startBattery = startBattery;
+    }
+
+    public long getEndBattery() {
+        return endBattery;
+    }
+
+    public void setEndBattery(long endBattery) {
+        this.endBattery = endBattery;
     }
 
     /**
