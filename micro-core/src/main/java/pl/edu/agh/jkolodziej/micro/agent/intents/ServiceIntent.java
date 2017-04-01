@@ -1,6 +1,9 @@
 package pl.edu.agh.jkolodziej.micro.agent.intents;
 
 import org.nzdis.micro.Intent;
+import pl.edu.agh.jkolodziej.micro.agent.enums.ConnectionType;
+import pl.edu.agh.jkolodziej.micro.agent.enums.TaskDestination;
+import pl.edu.agh.jkolodziej.micro.agent.enums.TaskType;
 
 /**
  * @author - Jakub Kołodziej
@@ -13,6 +16,14 @@ public abstract class ServiceIntent implements Intent {
     protected Long endTime;
     protected long startBattery;
     protected long endBattery;
+
+    protected String connectionType;
+    protected String taskDestination;
+    protected String taskType;
+    protected int wifiPowerSignal;
+    protected Long resolution;
+    protected Long fileSize;
+
     protected String result;
 
     public Long getStartTime() {
@@ -69,6 +80,54 @@ public abstract class ServiceIntent implements Intent {
 
     public void setEndBattery(long endBattery) {
         this.endBattery = endBattery;
+    }
+
+    public ConnectionType getConnectionType() {
+        return ConnectionType.valueOf(connectionType);
+    }
+
+    public void setConnectionType(ConnectionType connectionType) {
+        this.connectionType = connectionType.name();
+    }
+
+    public TaskDestination getTaskDestination() {
+        return TaskDestination.valueOf(taskDestination);
+    }
+
+    public void setTaskDestination(TaskDestination taskDestination) {
+        this.taskDestination = taskDestination.name();
+    }
+
+    public TaskType getTaskType() {
+        return TaskType.valueOf(taskType);
+    }
+
+    public void setTaskType(TaskType taskType) {
+        this.taskType = taskType.name();
+    }
+
+    public int getWifiPowerSignal() {
+        return wifiPowerSignal;
+    }
+
+    public void setWifiPowerSignal(int wifiPowerSignal) {
+        this.wifiPowerSignal = wifiPowerSignal;
+    }
+
+    public Long getResolution() {
+        return resolution;
+    }
+
+    public void setResolution(Long resolution) {
+        this.resolution = resolution;
+    }
+
+    public Long getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
     }
 
     /**

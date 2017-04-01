@@ -22,11 +22,10 @@ public class PCProviderRole extends ProviderRole {
         if (reply.getIntent() == null) {
             if (message.getIntent().getClass().equals(OCRIntent.class)) {
                 OCRIntent intent = message.getIntent();
+                intent.setWorker(workerName);
                 OCRWrapper ocrWrapper = new OCRWrapper(intent);
                 ocrWrapper.makeService();
                 intent = ocrWrapper.getOcrIntent();
-                intent.makeService();
-                intent.setWorker(workerName);
                 reply.setIntent(intent);
             }
         }

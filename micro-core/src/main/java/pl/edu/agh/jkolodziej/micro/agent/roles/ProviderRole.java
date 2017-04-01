@@ -36,8 +36,8 @@ public class ProviderRole extends DefaultSocialRole {
         reply.setIntent(null);
         if (!message.getIntent().getClass().equals(OCRIntent.class)) {
             ServiceIntent intent = message.getIntent();
-            intent.makeService();
             intent.setWorker(workerName);
+            intent.makeService();
             reply.setIntent(intent);
         }
         return reply;

@@ -42,6 +42,7 @@ public class ConvertPngToPDFIntent extends ServiceIntent {
             }
             String tmpPdfFilePath = filePath + String.format(TMP_PDF_FILENAME, new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()));
             result = createPDF(bytes, tmpPdfFilePath);
+            data = null;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -57,7 +58,7 @@ public class ConvertPngToPDFIntent extends ServiceIntent {
      * @return encrypted PDF File from PNG file in String format
      * @throws Exception
      */
-    public static String createPDF(byte[] pngFile, String tmpFile) throws Exception {
+    public String createPDF(byte[] pngFile, String tmpFile) throws Exception {
         Document document = new Document(PageSize.A4, 20, 20, 20, 20);
         PdfWriter.getInstance(document, new FileOutputStream(tmpFile));
         document.open();

@@ -50,6 +50,7 @@ public class OCRWrapper {
             tmpFile = new File(filePath + String.format(TMP_FILENAME, new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())));
             Files.write(bytes, tmpFile);
             ocrIntent.setResult(ocr(tmpFile));
+            ocrIntent.setData(null);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
