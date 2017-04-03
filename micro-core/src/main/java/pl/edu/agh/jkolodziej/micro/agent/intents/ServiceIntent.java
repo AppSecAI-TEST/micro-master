@@ -83,7 +83,7 @@ public abstract class ServiceIntent implements Intent {
     }
 
     public ConnectionType getConnectionType() {
-        return ConnectionType.valueOf(connectionType);
+        return connectionType == null ? null : ConnectionType.valueOf(connectionType);
     }
 
     public void setConnectionType(ConnectionType connectionType) {
@@ -91,7 +91,7 @@ public abstract class ServiceIntent implements Intent {
     }
 
     public TaskDestination getTaskDestination() {
-        return TaskDestination.valueOf(taskDestination);
+        return taskDestination == null ? null : TaskDestination.valueOf(taskDestination);
     }
 
     public void setTaskDestination(TaskDestination taskDestination) {
@@ -99,7 +99,7 @@ public abstract class ServiceIntent implements Intent {
     }
 
     public TaskType getTaskType() {
-        return TaskType.valueOf(taskType);
+        return taskType == null ? null : TaskType.valueOf(taskType);
     }
 
     public void setTaskType(TaskType taskType) {

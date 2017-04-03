@@ -4,6 +4,7 @@ import org.nzdis.micro.MicroMessage;
 import pl.edu.agh.jkolodziej.micro.agent.intents.OCRIntent;
 import pl.edu.agh.jkolodziej.micro.agent.roles.ProviderRole;
 import pl.edu.agh.jkolodziej.micro.agent.wrapper.OCRWrapper;
+import pl.edu.agh.jkolodziej.micro.helper.ResponsesMaker;
 
 /**
  * @author - Jakub Kołodziej
@@ -12,8 +13,29 @@ import pl.edu.agh.jkolodziej.micro.agent.wrapper.OCRWrapper;
  */
 public class PCProviderRole extends ProviderRole {
 
+    public MicroMessage messageToDo;
+
     public PCProviderRole(String workerName) {
         super(workerName);
+    }
+
+    @Override
+    protected void initialize() {
+        new Thread(new ResponsesMaker(this)).start();
+    }
+
+    @Override
+    public void handleMessage(MicroMessage message) {
+        messageToDo = message;
+    }
+
+
+    public MicroMessage getMessageToDo() {
+        return messageToDo;
+    }
+
+    public void setMessageToDo(MicroMessage messageToDo) {
+        this.messageToDo = messageToDo;
     }
 
     @Override

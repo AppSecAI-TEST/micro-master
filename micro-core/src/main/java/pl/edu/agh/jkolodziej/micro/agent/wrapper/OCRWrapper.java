@@ -72,7 +72,7 @@ public class OCRWrapper {
         tess.setLanguage("pol");
         tess.setOcrEngineMode(ITessAPI.TessOcrEngineMode.OEM_TESSERACT_ONLY);
         String res = tess.doOCR(imageFile);
-        return res;
+        return res.replaceAll("[^A-Za-z0-9 \n]", "");
     }
 
     public OCRIntent getOcrIntent() {

@@ -61,17 +61,19 @@
             <a name="DISCOVERY_MULTICAST_PORT" type="string">4444</a>
             <a name="DISCOVERY_BROADCAST_PORT" type="string">5555</a>
             <!-- Discovery frequency in seconds -->
-            <a name="DISCOVERY_FREQUENCY" type="string">20</a>
+            <a name="DISCOVERY_FREQUENCY" type="string">5</a>
             <!-- Heartbeat setup (only relevant if in distributed mode) -->
             <a name="START_HEARTBEAT" type="boolean">true</a>
-            <a name="HEARTBEAT_FREQUENCY" type="string">10</a>
+            <a name="HEARTBEAT_FREQUENCY" type="string">5</a>
             <!-- indicates when to consider another platform disconnected
-                (HEARTBEAT_FREQUENCY * HEARTBEAT_TIMEOUT_FACTOR) -->
-            <a name="HEARTBEAT_TIMEOUT_FACTOR" type="string">4</a>
+            (HEARTBEAT_FREQUENCY * HEARTBEAT_TIMEOUT_FACTOR) -->
+            <a name="HEARTBEAT_TIMEOUT_FACTOR" type="string">60</a>
+
             <!-- Indicates of platform components are started lazy -->
             <a name="START_LAZY" type="boolean">true</a>
             <!-- Definition of message validator (but not activated here) -->
             <a name="MICROMESSAGE_VALIDATOR" type="string">org.nzdis.micro.msgvalidator.DefaultMicroMessageValidator</a>
+
         </configuration>
     </a>
 
