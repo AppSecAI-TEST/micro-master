@@ -22,9 +22,13 @@ public enum ConnectionType {
             return NONE;
         } else if (name.equalsIgnoreCase("4g") || name.equalsIgnoreCase("LTE")) {
             return LTE_4G;
-        } else if (name.equalsIgnoreCase("3g") || name.equalsIgnoreCase("HSPA+")) {
+        } else if (name.equalsIgnoreCase("3g")
+                || name.equalsIgnoreCase("HSPA+")
+                || name.equalsIgnoreCase("HSPA")) {
             return UMTS_3G;
-        } else if (name.equalsIgnoreCase("2g") || name.equalsIgnoreCase("EDGE")) {
+        } else if (name.equalsIgnoreCase("2g")
+                || name.equalsIgnoreCase("EDGE")
+                || name.equalsIgnoreCase("GPRS")) {
             return CDMA_2G;
         }
         throw new IllegalStateException("Incorrect connection type name: " + connectionTypeName);
