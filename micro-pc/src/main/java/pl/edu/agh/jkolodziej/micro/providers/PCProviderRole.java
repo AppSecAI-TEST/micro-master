@@ -26,6 +26,7 @@ public class PCProviderRole extends ProviderRole {
 
     @Override
     public void handleMessage(MicroMessage message) {
+        System.out.println("Receive request!");
         messageToDo = message;
     }
 
