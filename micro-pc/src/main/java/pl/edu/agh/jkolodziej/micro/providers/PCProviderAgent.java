@@ -2,7 +2,7 @@ package pl.edu.agh.jkolodziej.micro.providers;
 
 import org.nzdis.micro.MicroMessage;
 import pl.edu.agh.jkolodziej.micro.agent.intents.OCRIntent;
-import pl.edu.agh.jkolodziej.micro.agent.roles.ProviderRole;
+import pl.edu.agh.jkolodziej.micro.agent.roles.ProviderAgent;
 import pl.edu.agh.jkolodziej.micro.agent.wrapper.OCRWrapper;
 import pl.edu.agh.jkolodziej.micro.helper.ResponsesMaker;
 
@@ -11,11 +11,11 @@ import pl.edu.agh.jkolodziej.micro.helper.ResponsesMaker;
  *         Provider which is resposible for  make specific services on PC side
  *         eg. OCR
  */
-public class PCProviderRole extends ProviderRole {
+public class PCProviderAgent extends ProviderAgent {
 
     public MicroMessage messageToDo;
 
-    public PCProviderRole(String workerName) {
+    public PCProviderAgent(String workerName) {
         super(workerName);
     }
 

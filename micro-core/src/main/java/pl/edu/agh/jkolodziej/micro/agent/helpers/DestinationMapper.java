@@ -12,7 +12,7 @@ public class DestinationMapper {
     private static final Map<TaskDestination, String> AGENT_DESTINATION_MAP = Maps.newHashMap();
 
     static {
-        AGENT_DESTINATION_MAP.put(TaskDestination.DOCKER, "docker");
+        AGENT_DESTINATION_MAP.put(TaskDestination.PC, "docker");
         AGENT_DESTINATION_MAP.put(TaskDestination.CLOUD, "AWS");
         AGENT_DESTINATION_MAP.put(TaskDestination.MOBILE, "android");
     }

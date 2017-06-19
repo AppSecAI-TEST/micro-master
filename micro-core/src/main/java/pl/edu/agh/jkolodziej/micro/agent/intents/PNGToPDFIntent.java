@@ -23,10 +23,10 @@ import static org.nzdis.micro.bootloader.MicroBootProperties.bootProperties;
  * @author - Jakub Kołodziej
  *         Intent which convert PNG file into PDF format
  */
-public class ConvertPngToPDFIntent extends ServiceIntent {
+public class PNGToPDFIntent extends ServiceIntent {
     private static final String TMP_PDF_FILENAME = "tmpPdf_%s.pdf";
 
-    public ConvertPngToPDFIntent() {
+    public PNGToPDFIntent() {
     }
 
     @Override

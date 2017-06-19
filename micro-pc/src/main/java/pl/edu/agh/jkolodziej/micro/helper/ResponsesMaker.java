@@ -1,7 +1,7 @@
 package pl.edu.agh.jkolodziej.micro.helper;
 
 import org.nzdis.micro.MicroMessage;
-import pl.edu.agh.jkolodziej.micro.providers.PCProviderRole;
+import pl.edu.agh.jkolodziej.micro.providers.PCProviderAgent;
 
 import static java.lang.Thread.sleep;
 
@@ -9,9 +9,9 @@ import static java.lang.Thread.sleep;
  * @author - Jakub Kołodziej
  */
 public class ResponsesMaker implements Runnable {
-    private final PCProviderRole providerRole;
+    private final PCProviderAgent providerRole;
 
-    public ResponsesMaker(PCProviderRole providerRole) {
+    public ResponsesMaker(PCProviderAgent providerRole) {
         this.providerRole = providerRole;
     }
 

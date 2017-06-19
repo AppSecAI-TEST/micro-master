@@ -11,11 +11,11 @@ import pl.edu.agh.jkolodziej.micro.agent.intents.ServiceIntent;
  *         Provider Role - Agent which share agents services
  *         It could be run on each devices e.g: PC, Android Devices
  */
-public class ProviderRole extends DefaultSocialRole {
+public class ProviderAgent extends DefaultSocialRole {
 
     protected final String workerName;
 
-    public ProviderRole(String workerName) {
+    public ProviderAgent(String workerName) {
         this.workerName = workerName;
     }
 
