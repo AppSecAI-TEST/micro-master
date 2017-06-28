@@ -74,6 +74,10 @@
             <!-- Definition of message validator (but not activated here) -->
             <a name="MICROMESSAGE_VALIDATOR" type="string">org.nzdis.micro.msgvalidator.DefaultMicroMessageValidator</a>
 
+            <!--AWS Identity pool id -->
+            <a name="AWS_IDENTITY_POOL_ID" type="string">TYPE HERE AWS_IDENTITY_POOL_ID</a>
+            <!--AWS Region-->
+            <a name="AWS_REGION" type="string">TYPE HERE AWS REGION - eg. US_WEST_2</a>
         </configuration>
     </a>
 
